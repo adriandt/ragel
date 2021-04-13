@@ -18,7 +18,7 @@ RUN gpg --verify colm-${COLM_VERSION}.tar.gz.asc colm-${COLM_VERSION}.tar.gz
 RUN tar -zxvf colm-${COLM_VERSION}.tar.gz
 WORKDIR /build/colm-${COLM_VERSION}
 RUN ./configure --prefix=/opt/colm.net/colm --disable-manual
-RUN make -j
+RUN make
 RUN make install
 
 WORKDIR /build
@@ -29,7 +29,7 @@ RUN gpg --verify ragel-${RAGEL_VERSION}.tar.gz.asc ragel-${RAGEL_VERSION}.tar.gz
 RUN tar -zxvf ragel-${RAGEL_VERSION}.tar.gz
 WORKDIR /build/ragel-${RAGEL_VERSION}
 RUN ./configure --prefix=/opt/colm.net/ragel --with-colm=/opt/colm.net/colm --disable-manual
-RUN make -j
+RUN make
 RUN make install
 WORKDIR /build/ragel-${RAGEL_VERSION}/test
 RUN ./runtests
