@@ -16,7 +16,8 @@ RUN ./autogen.sh
 RUN ./configure --prefix=/pkgs/colm
 RUN make install
 
-COPY . /devel/ragel
+WORKDIR /devel
+RUN git clone https://github.com/adrian-thurston/ragel.git
 WORKDIR /devel/ragel
 RUN ./autogen.sh
 RUN ./configure --prefix=/pkgs/ragel --with-colm=/pkgs/colm
