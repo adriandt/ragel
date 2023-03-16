@@ -65,7 +65,7 @@ Print version information and exit.
 .TP
 .B \-o " file"
 Write output to file. If -o is not given, a default file name is chosen by
-replacing the file extenstion of the input file. For source files ending in .rh
+replacing the file extension of the input file. For source files ending in .rh
 the suffix .h is used. For all other source files a suffix based on the output
 language is used (.c, .cpp, .m, etc.). If -o is not given for Graphviz output
 the generated dot file is written to standard output.
@@ -198,7 +198,7 @@ machine control code.
 .TP
 .B --nfa-conds-depth=D
 Search for high-cost conditions inside a prefix of the machine (depth D from
-start state). Search is rooted at NFA union contructs.
+start state). Search is rooted at NFA union constructs.
 .TP
 .B --nfa-term-check
 Search for condition-based general repetitions that will not function properly
@@ -212,7 +212,7 @@ Report a fail if number states in final machine exceeds this.
 .TP
 .B --nfa-breadth-check=E1,E2,..
 Report breadth cost of named entry points by (and start). Reporting starts at
-NFA union contructs.
+NFA union constructs.
 .TP
 .B --input-histogram=FN
 Input char histogram for breadth check. If unspecified a flat histogram is
@@ -283,7 +283,7 @@ may be created with the null builtin machine.
 Makes a two state machine with one transition on the given integer number.
 .TP
 .I hex
-Makes a two state machine with one transition on the given hexidecimal number.
+Makes a two state machine with one transition on the given hexadecimal number.
 .TP
 .I "/simple_regex/"
 A simple regular expression. Supports the notation '.', '*' and '[]', character
@@ -330,7 +330,7 @@ Lowercase characters /[a-z]/.
 Uppercase characters /[A-Z]/.
 .TP
 .B xdigit
-Hexidecimal digits /[0-9A-Fa-f]/.
+Hexadecimal digits /[0-9A-Fa-f]/.
 .TP
 .B cntrl
 Control characters 0..31, 127.

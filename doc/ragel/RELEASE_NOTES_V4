@@ -12,7 +12,7 @@ that may be added into or out of the state.
 
 In the following example act is executed on the transitions for 't' and 'y'.
 Even though it is only embedded in the context of the first alternative. This
-is because after matching 'hi ', the machine has not yet distinguished beween
+is because after matching 'hi ', the machine has not yet distinguished between
 the two threads. The machine is simultaneously in the state expecting 'there'
 and the state expecting 'you'.
 
@@ -47,7 +47,7 @@ only a single action embedded. An example follows below.
 
 Now Gone:
 
-1. The use of >@ for selecting the states to modfiy (as in >@/ to embed eof
+1. The use of >@ for selecting the states to modify (as in >@/ to embed eof
    actions, etc) has been removed. This prefix meant start state OR not start AND
    not final.
 
@@ -129,7 +129,7 @@ The embedding types are:
     err             -- an error action into a state
     lerr            -- a local error action into a state
 
-The possible modfiers:
+The possible modifiers:
     on name         -- specify a name for priority and local error embedding
 
 Character-Level Negation '^' Added (4.1)
@@ -149,7 +149,7 @@ Discontinued Plus Sign To Specifify Positive Literal Numbers (4.1)
 The use of + to specify a literal number as positive has been removed. This
 notation is redundant because all literals are positive by default. It was
 unlikely to be used but was provided for consistency. This notation caused an
-ambiguity with the '+' repetition operator. Due to this ambibuity, and the fact
+ambiguity with the '+' repetition operator. Due to this ambiguity, and the fact
 that it is unlikely to be used and is completely unnecessary when it is, it has
 been removed. This simplifies the design. It elimnates possible confusion and
 removes the need to explain why the ambiguity exists and how it is resolved.
@@ -169,7 +169,7 @@ changed, precedence is now given to the subtraction operator.
 This change is for two reasons: A) The subtraction operator is far more common
 than negative literal numbers. I have quite often been fooled by writing
 (any-0) and having it parsed as ( any . -0 ) rather than ( any - 0 ) as I
-wanted.  B) In the definition of concatentation I want to maintain that
+wanted.  B) In the definition of concatenation I want to maintain that
 concatenation is used only when there are no other binary operators separating
 two machines.  In the case of (any-0) there is an operator separating the
 machines and parsing this as the concatenation of (any . -0) violates this
@@ -279,7 +279,7 @@ This change is summarized by:
   transitions, their action will not be triggerend on EOF in non-final states.
  -Addition of EOF action embedding operators for all classes of states to make
   up for functionality removed from other operators. These are >/ $/ @/ %/.
- -Start transition operator '>' does not imply leaving transtions when start
+ -Start transition operator '>' does not imply leaving transitions when start
   state is final.
 
 This change results in a simpler and more direct relationship between the
@@ -288,9 +288,9 @@ the special cases within the operators that require you to stop and think as
 you program in Ragel.
 
 Previously, the pending out transition operator % simultaneously served two
-purposes. First, to embed actions to that are to get transfered to transitions
+purposes. First, to embed actions to that are to get transferred to transitions
 made going out of the machine. These transitions are created by the
-concatentation and kleene star operators. Second, to specify actions that get
+concatenation and kleene star operators. Second, to specify actions that get
 executed on EOF should the final state in the machine to which the operator is
 applied remain final.
 
@@ -301,7 +301,7 @@ using the EOF operator %/action.
 
 Also note that when generating dot file output of a specific component of a
 machine that has leaving transitions embedded in the final states, these
-transitions will no longer show up since leaving transtion operator no longer
+transitions will no longer show up since leaving transition operator no longer
 causes actions to be moved into the the EOF event when the state they are
 embeeded into becomes a final state of the final machine.
 
@@ -313,7 +313,7 @@ to the alphabet type. The element type however is usually not specified as
 const and in most cases the data pointer in the machine's execute function
 should be a const pointer. Therefore ragel now makes the element type default
 to a constant version of the alphabet type. This can always be changed by using
-the element statment. For example 'element char;' will result in a non-const
+the element statement. For example 'element char;' will result in a non-const
 data pointer.
 
 New Interface Examples (4.0)

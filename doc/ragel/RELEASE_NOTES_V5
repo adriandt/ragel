@@ -21,7 +21,7 @@ host code as straightforward as possible. This will ease the addition of more
 supported host languages.
 
 Ragel no longer parses structure and class names in order to infer machine
-names.  Parsing structures and clases requires knowledge of the host language
+names.  Parsing structures and classes requires knowledge of the host language
 hardcoded into Ragel. Since Ragel is moving towards language independence, this
 feature has been removed.
 
@@ -77,7 +77,7 @@ variables except p and pe by using the access statement.
   access some_pointer->;
   access variable_name_prefix;
 
-The writing statments are:
+The writing statements are:
 
   write data;
   write init;

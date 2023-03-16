@@ -1284,7 +1284,7 @@ means that if a machine accepts the zero-length string and control passes
 through the start state then the entering action is executed. Note
 that this can happen on both a following character and on the EOF event.
 
-In some machines, the start state has transtions coming in from within the
+In some machines, the start state has transitions coming in from within the
 machine. In these cases the start state is first isolated from the rest of the
 machine ensuring that the entering actions are executed once only.
 
@@ -2639,7 +2639,7 @@ generated code, such as call stack variables or scanner management
 variables, they are also initialized here.
 
 The `nocs` option to the write init statement will cause ragel to skip
-intialization of the cs variable. This is useful if the user wishes to use
+initialization of the cs variable. This is useful if the user wishes to use
 custom logic to decide which state the specification should start in.
 
 ==== Write Exec
@@ -2936,7 +2936,7 @@ jump statement in one of its actions should be used as an argument to a machine
 construction operator only with considerable care. Since DFA transitions may
 actually represent several NFA transitions, a call or jump embedded in one
 machine can inadvertently terminate another machine that it shares prefixes
-with. Despite this danger, theses statements have proven useful for tying
+with. Despite this danger, these statements have proven useful for tying
 together sub-parsers of a language into a parser for the full language,
 especially for the purpose of modularizing code and reducing the number of
 states when the machine contains frequently recurring patterns.
@@ -3202,7 +3202,7 @@ expr , expr , ...
 Join a list of machines together without
 drawing any transitions, without setting up a start state, and without
 designating any final states. Transitions between the machines may be specified
-using labels and epsilon transitions. The start state must be explicity
+using labels and epsilon transitions. The start state must be explicitly
 specified with the ``start'' label. Final states may be specified with an
 epsilon transition to the implicitly created ``final'' state. The join
 operation allows one to build machines using a state chart model.
@@ -3465,7 +3465,7 @@ machines, without having to compromise on the language matched, or devise some
 techniques outside of the ragel language.
 
 The NFA features require that the programmer make available `nfa_bp`, `nfa_len`
-and `nfa_count` variables. See the section <<variables_used_by_ragel, Varibles
+and `nfa_count` variables. See the section <<variables_used_by_ragel, Variables
 Used by Ragel>>
 
 Note that NFA features are non compatible with non-contiguous buffer blocks. It
@@ -3498,12 +3498,12 @@ run-time to get otherwise intractable unions to build.
 ==== NFA Repetition
 
 The NFA repetition construct `:nfa()` is designed to allow counting of objects
-in an ambiguous context. While the `:cond()` construct is an efficent counting
+in an ambiguous context. While the `:cond()` construct is an efficient counting
 method, it does not work properly when there are ambiguities around starting,
 repeating, or exiting a repetition. Since condition tests are embedding into
 transitions, they are made deterministic, therefore the repetition could be
 simultaneously incrementing and exiting the repetition. In these cases the NFA
-repetition is useful, because it will explore all possibilites and allow use
+repetition is useful, because it will explore all possibilities and allow use
 user to preserve and restore state. To pay for this, you must be willing to
 accept backtracking, however, and also give up non-congiguous buffer blocks.
 
@@ -3525,7 +3525,7 @@ backtracking it can restore relevant state, then perform the new capture.
 
 * `pop` is a condition action that restores state needed for counting instances
 of expression. This is an expression due to a current limitation of the
-implementation. In the future theis may change to a plain action.
+implementation. In the future this may change to a plain action.
 
 * `init` is an condition that is tested before entering the repeat.
 
