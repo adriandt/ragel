@@ -239,7 +239,7 @@ void LongestMatch::makeActions( ParseData *pd )
 		inlineList->head->children->append( new InlineItem( lmi->getLoc(), this, lmi, 
 				InlineItem::LmSetActId ) );
 		char *actName = new char[50];
-		sprintf( actName, "store%i", lmi->longestMatchId );
+		snprintf( actName, 50, "store%i", lmi->longestMatchId );
 		lmi->setActId = newLmAction( pd, lmi->getLoc(), actName, inlineList );
 	}
 
@@ -254,7 +254,7 @@ void LongestMatch::makeActions( ParseData *pd )
 		inlineList->head->children->append( new InlineItem( lmi->getLoc(), this, lmi, 
 				InlineItem::LmOnLast ) );
 		char *actName = new char[50];
-		sprintf( actName, "last%i", lmi->longestMatchId );
+		snprintf( actName, 50, "last%i", lmi->longestMatchId );
 		lmi->actOnLast = newLmAction( pd, lmi->getLoc(), actName, inlineList );
 	}
 
@@ -270,7 +270,7 @@ void LongestMatch::makeActions( ParseData *pd )
 		inlineList->head->children->append( new InlineItem( lmi->getLoc(), this, lmi, 
 				InlineItem::LmOnNext ) );
 		char *actName = new char[50];
-		sprintf( actName, "next%i", lmi->longestMatchId );
+		snprintf( actName, 50, "next%i", lmi->longestMatchId );
 		lmi->actOnNext = newLmAction( pd, lmi->getLoc(), actName, inlineList );
 	}
 
@@ -285,7 +285,7 @@ void LongestMatch::makeActions( ParseData *pd )
 		inlineList->head->children->append( new InlineItem( lmi->getLoc(), this, lmi, 
 				InlineItem::LmOnLagBehind ) );
 		char *actName = new char[50];
-		sprintf( actName, "lag%i", lmi->longestMatchId );
+		snprintf( actName, 50, "lag%i", lmi->longestMatchId );
 		lmi->actLagBehind = newLmAction( pd, lmi->getLoc(), actName, inlineList );
 	}
 
@@ -305,7 +305,7 @@ void LongestMatch::makeActions( ParseData *pd )
 		inlineList->head->children->append( new InlineItem( lmi->getLoc(), this, lmi, 
 				InlineItem::LmNfaOnLast ) );
 		char *actName = new char[50];
-		sprintf( actName, "nlast%i", lmi->longestMatchId );
+		snprintf( actName, 50, "nlast%i", lmi->longestMatchId );
 		lmi->actNfaOnLast = newLmAction( pd, lmi->getLoc(), actName, inlineList );
 	}
 
@@ -318,7 +318,7 @@ void LongestMatch::makeActions( ParseData *pd )
 		inlineList->head->children->append( new InlineItem( lmi->getLoc(), this, lmi, 
 				InlineItem::LmNfaOnNext ) );
 		char *actName = new char[50];
-		sprintf( actName, "nnext%i", lmi->longestMatchId );
+		snprintf( actName, 50, "nnext%i", lmi->longestMatchId );
 		lmi->actNfaOnNext = newLmAction( pd, lmi->getLoc(), actName, inlineList );
 	}
 
@@ -331,7 +331,7 @@ void LongestMatch::makeActions( ParseData *pd )
 		inlineList->head->children->append( new InlineItem( lmi->getLoc(), this, lmi, 
 				InlineItem::LmNfaOnEof ) );
 		char *actName = new char[50];
-		sprintf( actName, "neof%i", lmi->longestMatchId );
+		snprintf( actName, 50, "neof%i", lmi->longestMatchId );
 		lmi->actNfaOnEof = newLmAction( pd, lmi->getLoc(), actName, inlineList );
 	}
 
